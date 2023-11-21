@@ -1,0 +1,56 @@
+﻿@model MoviesRentalClient.Models.Movies
+@using MoviesRentalClient.Models
+@{
+    ViewBag.Title = "Detail";
+    var user = Session != null ? (RegisterViewModel)Session["UserInfo"] : null;
+}
+
+<h2>Detail</h2>
+
+<div class="container mt-5 ">
+
+    <!--search bar-->
+    <!--veiw-->
+    <div class="viewbox  ">
+        <div class="view"><i class="fa fa-bars" id="btn-listModel" aria-hidden="true"></i></div>
+        <div class="view"><i class="fa fa-th" aria-hidden="true"></i></div>
+
+    </div>
+    <div class="clearfix"></div>
+    <div class="row" id="data-panel">
+        <div class="col-md-3">
+
+            <div class="card mb-3">
+                <img class="card-img-top " src="@Model.ImagePath" alt="Card image cap">
+                <div class="card-body movie-item-body">
+                    <h5 class="card-title">@Model.MovieName</h5>
+                </div>
+                <!-- "More" button -->
+                <div class="card-footer">
+                    @if (user != null)
+                    {
+                        if (user.IsAdmin)
+                        {
+                            <button class="btn btn-danger btn-show-movie" onclick="deleteMovie(@Model.MovieId)">Delete</button>
+                        }
+                        else
+                        {
+                            <button class="btn btn-primary btn-show-movie" onclick="rentMovie(@Model.MovieId)" disabled="@Convert.ToBoolean(ViewBag.IsMovieAlreadyRented)">Rent</button>
+                        }
+                    }
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="mb-3">
+                <h5>Description</h5>
+                <p>@Model.Description</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- data-panel -->
+</div>
+<script src="~/Scripts/script.js"></script>

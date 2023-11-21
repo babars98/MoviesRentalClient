@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MoviesService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:52349/MoviesService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:52349/MoviesService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMoviesService_GetAllMovies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMovies" />
+  </wsdl:message>
+  <wsdl:message name="IMoviesService_GetAllMovies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMoviesService_GetMovie_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMovie" />
+  </wsdl:message>
+  <wsdl:message name="IMoviesService_GetMovie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMoviesService_RentedMovies_InputMessage">
+    <wsdl:part name="parameters" element="tns:RentedMovies" />
+  </wsdl:message>
+  <wsdl:message name="IMoviesService_RentedMovies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RentedMoviesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMoviesService_AddMovie_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMovie" />
+  </wsdl:message>
+  <wsdl:message name="IMoviesService_AddMovie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMoviesService_DeleteMove_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMove" />
+  </wsdl:message>
+  <wsdl:message name="IMoviesService_DeleteMove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMoviesService_RentMovie_InputMessage">
+    <wsdl:part name="parameters" element="tns:RentMovie" />
+  </wsdl:message>
+  <wsdl:message name="IMoviesService_RentMovie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RentMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMoviesService_IsMovieAlreadyRented_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsMovieAlreadyRented" />
+  </wsdl:message>
+  <wsdl:message name="IMoviesService_IsMovieAlreadyRented_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsMovieAlreadyRentedResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMoviesService">
+    <wsdl:operation name="GetAllMovies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/GetAllMovies" message="tns:IMoviesService_GetAllMovies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/GetAllMoviesResponse" message="tns:IMoviesService_GetAllMovies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMovie">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/GetMovie" message="tns:IMoviesService_GetMovie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/GetMovieResponse" message="tns:IMoviesService_GetMovie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RentedMovies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/RentedMovies" message="tns:IMoviesService_RentedMovies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/RentedMoviesResponse" message="tns:IMoviesService_RentedMovies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMovie">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/AddMovie" message="tns:IMoviesService_AddMovie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/AddMovieResponse" message="tns:IMoviesService_AddMovie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/DeleteMove" message="tns:IMoviesService_DeleteMove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/DeleteMoveResponse" message="tns:IMoviesService_DeleteMove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RentMovie">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/RentMovie" message="tns:IMoviesService_RentMovie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/RentMovieResponse" message="tns:IMoviesService_RentMovie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsMovieAlreadyRented">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMoviesService/IsMovieAlreadyRented" message="tns:IMoviesService_IsMovieAlreadyRented_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMoviesService/IsMovieAlreadyRentedResponse" message="tns:IMoviesService_IsMovieAlreadyRented_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMoviesService" type="tns:IMoviesService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllMovies">
+      <soap:operation soapAction="http://tempuri.org/IMoviesService/GetAllMovies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMovie">
+      <soap:operation soapAction="http://tempuri.org/IMoviesService/GetMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RentedMovies">
+      <soap:operation soapAction="http://tempuri.org/IMoviesService/RentedMovies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMovie">
+      <soap:operation soapAction="http://tempuri.org/IMoviesService/AddMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMove">
+      <soap:operation soapAction="http://tempuri.org/IMoviesService/DeleteMove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RentMovie">
+      <soap:operation soapAction="http://tempuri.org/IMoviesService/RentMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMovieAlreadyRented">
+      <soap:operation soapAction="http://tempuri.org/IMoviesService/IsMovieAlreadyRented" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MoviesService">
+    <wsdl:port name="BasicHttpBinding_IMoviesService" binding="tns:BasicHttpBinding_IMoviesService">
+      <soap:address location="http://localhost:52349/MoviesService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
