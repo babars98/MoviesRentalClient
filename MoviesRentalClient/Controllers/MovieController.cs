@@ -33,7 +33,9 @@ namespace MoviesRentalClient.Controllers
             var movie = _movieService.GetMovie(movieId);
             var movieObj = JsonConvert.DeserializeObject<Movies>(movie);
             var user = GetUserInfofromSession();
-            ViewBag.IsMovieAlreadyRented = _movieService.IsMovieAlreadyRented(user.UserId, movieId);
+
+            if (user != null)
+                ViewBag.IsMovieAlreadyRented = _movieService.IsMovieAlreadyRented(user.UserId, movieId);
             return View(movieObj);
         }
 
